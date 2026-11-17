@@ -1,0 +1,231 @@
+In Python, errors are problems that occur in a program and prevent it from executing correctly or producing the expected output.
+
+Python errors are mainly classified into 3 types:
+1. Syntax Errors
+2. Runtime Errors (Exceptions)
+3. Logical Errors
+
+1. Syntax Error
+A syntax error occurs when we violate Python's grammar or rules while writing code.
+
+Example 1: Missing colon
+if 10 > 5   
+  print("Hello")
+
+Output:
+SyntaxError: expected ':'
+
+
+Correct code:
+if 10 > 5:    
+  print("Hello")
+
+
+
+Example 2: Incorrect indentation
+if 10 > 5:
+print("Hello")
+
+
+
+Output:
+IndentationError: expected an indented block
+
+
+Correct code:
+if 10 > 5:   
+  print("Hello")
+
+
+
+Other examples:
+- Missing brackets
+- Missing quotation marks
+- Incorrect indentation
+- Incorrect keywords
+
+2. Runtime Errors (Exceptions)
+Runtime errors occur while the program is executing.
+
+The syntax may be correct, but an unexpected situation occurs during execution.
+
+Important Python runtime errors:
+1. ZeroDivisionError
+Occurs when we divide a number by zero.
+a = 10
+b = 0
+print(a / b)
+
+
+
+Output:
+ZeroDivisionError: division by zero
+
+
+2. NameError
+Occurs when we use a variable that has not been defined.
+print(x)
+
+
+
+Output:
+NameError: name 'x' is not defined
+
+
+3. TypeError
+Occurs when an operation is performed on incompatible data types.
+a = 10
+b = "20"
+print(a + b)
+
+
+
+Output:
+TypeError
+
+
+4. ValueError
+Occurs when the data type is acceptable, but the value is invalid.
+a = int("hello")
+print(a)
+
+
+
+Output:
+ValueError: invalid literal for int()
+
+
+5. IndexError
+Occurs when we access an index that does not exist in a sequence.
+a = [10, 20, 30]
+print(a[5])
+
+
+
+Output:
+IndexError: list index out of range
+
+
+6. KeyError
+Occurs when we try to access a dictionary key that does not exist.
+student = {"name": "Ram", "age": 22}
+print(student["marks"])
+
+
+
+Output:
+KeyError: 'marks'
+
+
+7. AttributeError
+Occurs when we try to access an attribute or method that an object does not have.
+a = 10
+a.append(20)
+
+
+
+Output:
+AttributeError
+
+
+8. ImportError
+Occurs when an imported name cannot be found or imported.
+from math import addition
+
+
+
+Output:
+ImportError
+
+
+9. ModuleNotFoundError
+Occurs when the requested module cannot be found.
+import abcxyz
+
+
+
+Output:
+ModuleNotFoundError
+
+
+10. FileNotFoundError
+Occurs when we try to open a file that does not exist.
+f = open("student.txt", "r")
+
+
+
+Output:
+FileNotFoundError
+
+
+11. IndentationError
+Occurs when the indentation rules are not followed.
+for i in range(3):
+print(i)
+
+
+
+12. OverflowError
+Occurs when a numerical operation produces a result too large for the supported numerical function.
+import mathprint(math.exp(1000))
+
+
+
+Output:
+OverflowError
+
+
+3. Logical Error
+A logical error occurs when the program executes successfully but produces an incorrect result because of incorrect logic.
+
+Example:
+a = 10
+b = 20
+result = a - b
+print(result)
+
+
+
+Output:
+-10
+
+
+Expected output:
+30
+
+
+Why? We used subtraction (-) instead of addition (+).
+
+There is no error message because Python successfully executes the code.
+Important differences
+Error type	Meaning	Example
+Syntax Error	Violating Python grammar	Missing colon
+Runtime Error	Error during execution	Dividing by zero
+Logical Error	Incorrect program logic	Wrong formula
+
+4. Exception Handling
+We can handle runtime exceptions using try, except, else, and finally.
+
+Example:
+try:    
+a = 10    
+b = 0    
+print(a / b)
+except ZeroDivisionError:
+  print("Cannot divide by zero")
+else:    
+  print("No error occurred")
+finally:    
+  print("Program completed")
+
+
+
+Output:
+Cannot divide by zero
+Program completed
+
+
+- try: Contains code that may produce an exception.
+- except: Handles the exception.
+- else: Executes when no exception occurs.
+- finally: Executes whether an exception occurs or not.
